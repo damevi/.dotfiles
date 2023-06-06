@@ -1,6 +1,10 @@
 [[language]]
 name = "python"
 auto-format = true
-# roots = ["pyproject.toml"]
-# language-server = { command = "pyright-langserver", args = ["--stdio"] }
-# config = {} # <- this is the important line
+roots = ["pyproject.toml"]
+language-server = { command = "pyright-langserver", args = ["--stdio"] }
+config = {} # <- this is the important line
+[[language]]
+name = "svelte"
+auto-format = true
+file-types=['svelte']

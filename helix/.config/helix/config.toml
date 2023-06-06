@@ -5,8 +5,14 @@ scrolloff=8
 mouse = false
 line-number="relative"
 true-color = true
-rulers = [80]
+rulers = [120]
 bufferline = "always"
+
+[editor.indent-guides]
+render = true
+
+[editor.file-picker]
+hidden = false
 
 [keys.normal]
 "C-j" = ["goto_next_paragraph"]
@@ -32,3 +38,8 @@ select = "underline"
 
 [editor.lsp]
 display-messages = true
+
+[editor.statusline]
+left = ["mode", "spinner", "file-name", "file-type", "total-line-numbers", "file-encoding"]
+center = []
+right = ["selections", "primary-selection-length", "position", "position-percentage", "spacer", "diagnostics", "workspace-diagnostics", "version-control"]
