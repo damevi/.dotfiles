@@ -8,3 +8,6 @@ config = {} # <- this is the important line
 name = "svelte"
 auto-format = true
 file-types=['svelte']
+[[language]]
+name = "typescript"
+auto-format = true
