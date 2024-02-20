@@ -32,6 +32,8 @@ return {
     ["<leader>b"] = { name = "Buffers" },
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
+    ["<C-d>"] = { '<C-d>zz', desc = "Move down" },
+    ["<C-u>"] = { '<C-u>zz', desc = "Move up" }
   },
   t = {
     -- setting a mapping to false will disable it
@@ -41,6 +43,6 @@ return {
     -- move highlighted stuff
     ["K"] = { ":m '<-2<CR>gv=gv", desc = "Move selection up" },
     ["J"] = { ":m '>+1<CR>gv=gv", desc = "Move selection down" },
-    ["<leader>y"] = { '"*y', desc = "Copy selection to system clipboard" }
+    ["<leader>y"] = { '"*y', desc = "Copy selection to system clipboard" },
   }
 }
