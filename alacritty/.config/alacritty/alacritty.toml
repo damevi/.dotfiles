@@ -1,12 +1,20 @@
+live_config_reload = true
+
 # themes from https://github.com/alacritty/alacritty-theme
 
 import = ["/Users/uciek/.config/alacritty/themes/themes/gruvbox_dark.toml"]
 
+[shell]
+program = "/opt/homebrew/bin/fish"
+
 [font]
-size = 14
+size = 18
 
 [font.normal]
 family = "JetBrainsMono Nerd Font"
+
+[window]
+startup_mode = "Maximized"
 
 [window.padding]
 x = 7
