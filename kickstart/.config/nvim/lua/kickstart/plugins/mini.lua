@@ -39,13 +39,17 @@ return {
       --  Autopairs
       require('mini.pairs').setup()
       --  Mininal file explorer
-      require('mini.files').setup()
+      require('mini.files').setup {
+        options = {
+          use_as_default_explorer = false,
+        },
+      }
       local minifiles_toggle = function(...)
         if not MiniFiles.close() then
           MiniFiles.open(...)
         end
       end
-      vim.keymap.set('n', '<leader>E', minifiles_toggle, { desc = 'Open file [E]xplorer' })
+      vim.keymap.set('n', '<S-E>', minifiles_toggle, { desc = 'Open file [E]xplorer' })
 
       local show_dotfiles = true
 
