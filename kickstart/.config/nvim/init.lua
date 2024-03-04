@@ -770,6 +770,41 @@ require('lazy').setup {
 
       -- ... and there is more!
       --  Check out: https://github.com/echasnovski/mini.nvim
+      --  Autopairs
+      require('mini.pairs').setup()
+      --  Miminal file explorer
+      require('mini.files').setup()
+      local minifiles_toggle = function(...)
+        if not MiniFiles.close() then
+          MiniFiles.open(...)
+        end
+      end
+      vim.keymap.set('n', '<leader>E', minifiles_toggle, { desc = 'Open file [E]xplorer' })
+
+      local show_dotfiles = true
+
+      local filter_show = function()
+        return true
+      end
+
+      local filter_hide = function(fs_entry)
+        return not vim.startswith(fs_entry.name, '.')
+      end
+
+      local toggle_dotfiles = function(fs_entry)
+        show_dotfiles = not show_dotfiles
+        local new_filter = show_dotfiles and filter_show or filter_hide
+        MiniFiles.refresh { content = { filter = new_filter } }
+      end
+
+      vim.api.nvim_create_autocmd('User', {
+        pattern = 'MiniFilesBufferCreate',
+        callback = function(args)
+          local buf_id = args.data.buf_id
+          -- Tweak left-hand side of mapping to your liking
+          vim.keymap.set('n', 'g.', toggle_dotfiles, { buffer = buf_id })
+        end,
+      })
     end,
   },
 
@@ -807,7 +842,7 @@ require('lazy').setup {
   --  Uncomment any of the lines below to enable them (you will need to restart nvim).
   --
   -- require 'kickstart.plugins.debug',
-  -- require 'kickstart.plugins.indent_line',
+  require 'kickstart.plugins.indent_line',
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.
