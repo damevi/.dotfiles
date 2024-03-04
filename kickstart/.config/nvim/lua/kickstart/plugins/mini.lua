@@ -34,9 +34,11 @@ return {
       -- ... and there is more!
       --  Check out: https://github.com/echasnovski/mini.nvim
 
+      -- Move stuff around
+      require('mini.move').setup()
       --  Autopairs
       require('mini.pairs').setup()
-      --  Miminal file explorer
+      --  Mininal file explorer
       require('mini.files').setup()
       local minifiles_toggle = function(...)
         if not MiniFiles.close() then
