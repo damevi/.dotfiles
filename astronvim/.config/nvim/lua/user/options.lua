@@ -9,7 +9,7 @@ return {
     wrap = false,          -- sets vim.opt.wrap
     scrolloff = 8,
     updatetime = 50,
-    colorcolumn = "80",
+    colorcolumn = "100",
   },
   g = {
     mapleader = " ",                 -- sets vim.g.mapleader
