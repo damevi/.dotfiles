@@ -38,6 +38,8 @@ return {
       require('mini.move').setup()
       --  Autopairs
       require('mini.pairs').setup()
+      -- Jump 2d
+      require('mini.jump2d').setup()
       --  Mininal file explorer
       require('mini.files').setup {
         options = {
