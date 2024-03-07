@@ -24,6 +24,7 @@ vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' }
 -- vim.keymap.set('n', '<right>', '<cmd>echo "Use l to move!!"<CR>')
 -- vim.keymap.set('n', '<up>', '<cmd>echo "Use k to move!!"<CR>')
 -- vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
+vim.keymap.set('n', '<C-d>', '<C-d>zz', { desc = 'Center on page down' })
 
 -- Keybinds to make split navigation easier.
 --  Use CTRL+<hjkl> to switch between windows
@@ -39,6 +40,11 @@ vim.keymap.set({ 'n', 'x', 'o' }, 'L', '$', { desc = 'Move to the end of the lin
 vim.keymap.set({ 'n', 'x', 'o' }, 'H', '^', { desc = 'Move to the beginning of the line' })
 vim.keymap.set('n', '<C-u>', '<C-u>zz', { desc = 'Center on page up' })
 vim.keymap.set('n', '<C-d>', '<C-d>zz', { desc = 'Center on page down' })
+-- enables search to stay in the middle
+vim.keymap.set('n', 'n', 'nzzzv')
+vim.keymap.set('n', 'N', 'Nzzzv')
+-- paste without ovewriting clipboard
+vim.keymap.set('x', '<leader>p', '"_dP')
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
