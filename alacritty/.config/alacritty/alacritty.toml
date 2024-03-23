@@ -14,6 +14,8 @@ size = 17
 family = "JetBrainsMono Nerd Font"
 
 [window]
+opacity = 0.90
+decorations = "Buttonless"
 startup_mode = "Maximized"
 option_as_alt= "OnlyLeft"
 
