@@ -1,4 +1,4 @@
-theme = "tokyonight_storm"
+theme = "nightfox"
 
 [editor]
 scrolloff=8
@@ -48,3 +48,8 @@ select = "underline"
 left = ["mode", "spinner", "file-name", "file-type", "total-line-numbers", "file-encoding"]
 center = []
 right = ["selections", "primary-selection-length", "position", "position-percentage", "spacer", "diagnostics", "workspace-diagnostics", "version-control"]
+
+# enable in next ver
+# [editor.inline-diagnostics]
+# cursor-line = "hint"
+# other-lines = "error"
